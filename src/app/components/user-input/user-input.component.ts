@@ -1,12 +1,9 @@
 import { Component, output, signal } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { InvestmentInput } from '../../models/investment.model';
 import { InvestmentService } from '../../services/investment.service';
 
 @Component({
   selector: 'app-user-input',
-  standalone: true,
-  imports: [FormsModule],
   templateUrl: './user-input.component.html',
   styleUrl: './user-input.component.css',
 })
@@ -16,7 +13,7 @@ export class UserInputComponent {
   expectedReturn = signal(12);
   duration = signal(5);
 
-  calculate = output<InvestmentInput>();
+  // calculate = output<InvestmentInput>();
 
   constructor(private investmentService: InvestmentService) {}
 
