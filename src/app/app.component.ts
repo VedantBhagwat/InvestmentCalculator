@@ -1,8 +1,9 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { HeaderComponent } from './components/header/header.component';
 import { InvestmentResultsComponent } from './components/investment-results/investment-results.component';
 import { UserInputComponent } from './components/user-input/user-input.component';
 import { InvestmentInput, InvestmentResult } from './models/investment.model';
+import { InvestmentService } from './services/investment.service';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +13,8 @@ import { InvestmentInput, InvestmentResult } from './models/investment.model';
 })
 export class AppComponent {
   // resultData!: InvestmentResult[];
-  resultData = signal<InvestmentResult[] | undefined>(undefined);
-
+  // resultData = signal<InvestmentResult[] | undefined>(undefined);
+  /* // Move this method to service
   onCalculateInvestmentResults(data: InvestmentInput) {
     const annualData = [];
     let investmentValue = data.initialInvestment;
@@ -39,5 +40,5 @@ export class AppComponent {
     // this.resultData = annualData
     this.resultData.set(annualData);
     console.log(this.resultData());
-  }
+  } */
 }
